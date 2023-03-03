@@ -1,0 +1,43 @@
+<div>
+    <div #myModal class="modal">
+        <div class="center-modal">
+            <div class="block">
+                <!-- Btn X -->
+                <button type="button" class="close" (click)="close()" (click)="logCloseModal()">×</button>
+
+                <!-- Logos -->
+                <!-- Logo success -->
+                <img *ngIf="ico === 'success'" src="../../assets/success.svg" alt="success image" class="image">
+                <!-- Logo error -->
+                <img *ngIf="ico === 'error'" src="../../assets/error.png" alt="error image" class="image">
+                <!-- Logo warning -->
+                <img *ngIf="ico === 'warning'" src="../../assets/warning.png" alt="error image" class="image">
+
+                <!-- Title -->
+                <h1 class="title"> {{ title }} </h1>
+
+                <!-- Message -->
+                <p class="message"> {{ message }} </p>
+
+                <!-- Btns close -->
+                <div class="center">
+                    <!-- Btn success -->
+                    <button *ngIf="btn === 'success'" type="button" class="btn"
+                        style="background-color: rgb(6, 229, 229);" (click)="close()" (click)="logCloseModal()">
+                        Aceptar
+                    </button>
+                    <!-- Btn error -->
+                    <button *ngIf="btn === 'error'" type="button" class="btn" style="background-color: red;"
+                        (click)="close()" (click)="logCloseModal()">
+                        Cerrar
+                    </button>
+                    <!-- Btn warning -->
+                    <button *ngIf="btn === 'warning'" type="button" class="btn"
+                        style="background-color: rgb(255, 128, 0);" (click)="close()" (click)="logCloseModal()">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
