@@ -10,18 +10,16 @@
 
     <!-- Modal Success -->
     <h1 style="color: green; font-family: system-ui;">Success</h1>
-    <app-alert #modalS [ico]="succes.ico" [title]="succes.title" [message]="succes.message"
-        [btn]="succes.btn"></app-alert>
+    <app-alert #modalS [ico]="succes.ico" [title]="succes.title" [message]="succes.message" />
     <button (click)="openModal(modalS)" (click)="logOpenModal()">Open Modal</button>
 
     <!-- Modal Error -->
     <h1 style="color: red; font-family: system-ui;">Error</h1>
-    <app-alert #modalE [ico]="error.ico" [title]="error.title" [message]="error.message" [btn]="error.btn"></app-alert>
+    <app-alert #modalE [ico]="error.ico" [title]="error.title" [message]="error.message" [btn]="error.btn" />
     <button (click)="openModal(modalE)" (click)="logOpenModal()">Open Modal</button>
 
     <!-- Modal Warning -->
     <h1 style="color: orange; font-family: system-ui;">Warning</h1>
-    <app-alert #modalW [ico]="warning.ico" [title]="warning.title" [message]="warning.message"
-        [btn]="warning.btn"></app-alert>
+    <app-alert #modalW [ico]="warning.ico" [title]="warning.title" [message]="warning.message" [btn]="warning.btn" />
     <button (click)="openModal(modalW)" (click)="logOpenModal()">Open Modal</button>
 </div>

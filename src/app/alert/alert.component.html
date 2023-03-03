@@ -22,20 +22,32 @@
                 <!-- Btns close -->
                 <div class="center">
                     <!-- Btn success -->
-                    <button *ngIf="btn === 'success'" type="button" class="btn"
-                        style="background-color: rgb(6, 229, 229);" (click)="close()" (click)="logCloseModal()">
-                        Aceptar
-                    </button>
+                    <div *ngIf="btn === 'success'">
+                        <button type="button" class="btn" style="background-color: rgb(6, 229, 229);" (click)="close()"
+                            (click)="logBtn01()">
+                            Aceptar
+                        </button>
+                        <button type="button" class="btn" style="background-color: rgb(229, 0, 0);" (click)="close()"
+                            (click)="logCloseModal()">
+                            Cancelar
+                        </button>
+                    </div>
+
                     <!-- Btn error -->
-                    <button *ngIf="btn === 'error'" type="button" class="btn" style="background-color: red;"
-                        (click)="close()" (click)="logCloseModal()">
-                        Cerrar
-                    </button>
+                    <div *ngIf="btn === 'error'">
+                        <button type="button" class="btn" style="background-color: red;" (click)="close()"
+                            (click)="logCloseModal()">
+                            Cerrar
+                        </button>
+                    </div>
+
                     <!-- Btn warning -->
-                    <button *ngIf="btn === 'warning'" type="button" class="btn"
-                        style="background-color: rgb(255, 128, 0);" (click)="close()" (click)="logCloseModal()">
-                        Cerrar
-                    </button>
+                    <div *ngIf="btn === 'warning'">
+                        <button type="button" class="btn" style="background-color: rgb(255, 128, 0);" (click)="close()"
+                            (click)="logCloseModal()">
+                            Cerrar
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -93,6 +93,7 @@
     border-color: rgb(0, 0, 0, 0);
     font-size: 15px;
     cursor: pointer;
+    margin: 0 5px;
 }
 
 .btn:hover {
