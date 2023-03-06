@@ -20,7 +20,16 @@
 
     <!-- Modal Warning -->
     <h1 style="color: orange; font-family: system-ui;">Warning</h1>
-    <app-alert #modalW [ico]="warning.ico" [title]="warning.title" [message]="warning.message"
-        [btn]="warning.btn" />
+    <app-alert #modalW (newItemEvent)="addItem($event)" [ico]="warning.ico" [title]="warning.title" [message]="warning.message" [btn]="warning.btn" />
     <button (click)="openModal(modalW)" (click)="logOpenModal()">Open Modal</button>
+
+    <!-- Modal Form -->
+    <h1 style="color: silver; font-family: system-ui;">Form</h1>
+    <app-alert #modalF (newItemEvent)="addItem($event)" [ico]="form.ico" [title]="form.title" [message]="form.message" [btn]="form.btn" />
+    <button (click)="openModal(modalF)" (click)="logOpenModal()">Open Modal</button>
+
+    <!-- <app-pruebas (newItemEvent)="addItem($event)" /> -->
+    <ul>
+        <li *ngFor="let item of items"> {{item}} </li>
+    </ul>
 </div>

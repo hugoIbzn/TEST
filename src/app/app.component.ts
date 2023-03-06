@@ -15,8 +15,15 @@ interface IModal {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  // Titulo 
   title = 'TEST';
+
+  // Array de usuarios
+  items: string[] = [];
+
+  addItem(newItem: string) {
+    this.items.push(newItem);
+  }
 
   // Creando los casos que pueden suceder con al interfaz
   // Caso Success
@@ -43,6 +50,14 @@ export class AppComponent {
     btn: "warning"
   }
 
+  // Caso form
+  form: IModal = {
+    ico: "users",
+    title: "Este titulo es de form",
+    message: "Mensaje de form",
+    btn: "form"
+  }
+
   // Logueamos cuando se ejecute el Modal
   logOpenModal() {
     console.log("Ejecutando Modal");
@@ -55,6 +70,8 @@ export class AppComponent {
   @ViewChild('modalE', { static: false }) modalE: AlertComponent
   // Caso WARNING
   @ViewChild('modalW', { static: false }) modalW: AlertComponent
+  // Caso FORM
+  @ViewChild('modalF', { static: false }) modalF: AlertComponent
 
   // Tenemos la función para abrirlo la cual recibe el parametro correspondiente
   openModal(modal: AlertComponent) {

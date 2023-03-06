@@ -1,55 +1,79 @@
 <div>
-    <div #myModal class="modal">
-        <div class="center-modal">
-            <div class="block">
-                <!-- Btn X -->
-                <button type="button" class="close" (click)="close()" (click)="logCloseModal()">×</button>
+  <div #myModal class="modal">
+    <div class="center-modal">
+      <div class="block">
+        <!-- Btn X -->
+        <button type="button" class="close" (click)="close()" (click)="logCloseModal()">×</button>
 
-                <!-- Logos -->
-                <!-- Logo success -->
-                <img *ngIf="ico === 'success'" src="../../assets/success.svg" alt="success image" class="image">
-                <!-- Logo error -->
-                <img *ngIf="ico === 'error'" src="../../assets/error.png" alt="error image" class="image">
-                <!-- Logo warning -->
-                <img *ngIf="ico === 'warning'" src="../../assets/warning.png" alt="error image" class="image">
+        <!-- Logos -->
+        <!-- Logo success -->
+        <img *ngIf="ico === 'success'" src="../../assets/images/success.svg" alt="success image" class="image" />
+        <!-- Logo error -->
+        <img *ngIf="ico === 'error'" src="../../assets/images/error.png" alt="error image" class="image" />
+        <!-- Logo warning -->
+        <img *ngIf="ico === 'warning'" src="../../assets/images/warning.png" alt="warning image" class="image" />
+        <!-- Logo users -->
+        <img *ngIf="ico === 'users'" src="../../assets/images/users.png" alt="users image" class="image" />
 
-                <!-- Title -->
-                <h1 class="title"> {{ title }} </h1>
+        <!-- Title -->
+        <h1 class="title">{{ title }}</h1>
 
-                <!-- Message -->
-                <p class="message"> {{ message }} </p>
+        <!-- Message -->
+        <p class="message">{{ message }}</p>
 
-                <!-- Btns close -->
-                <div class="center">
-                    <!-- Btn success -->
-                    <div *ngIf="btn === 'success'">
-                        <button type="button" class="btn" style="background-color: rgb(6, 229, 229);" (click)="close()"
-                            (click)="logBtn01()">
-                            Aceptar
-                        </button>
-                        <button type="button" class="btn" style="background-color: rgb(229, 0, 0);" (click)="close()"
-                            (click)="logCloseModal()">
-                            Cancelar
-                        </button>
-                    </div>
-
-                    <!-- Btn error -->
-                    <div *ngIf="btn === 'error'">
-                        <button type="button" class="btn" style="background-color: red;" (click)="close()"
-                            (click)="logCloseModal()">
-                            Cerrar
-                        </button>
-                    </div>
-
-                    <!-- Btn warning -->
-                    <div *ngIf="btn === 'warning'">
-                        <button type="button" class="btn" style="background-color: rgb(255, 128, 0);" (click)="close()"
-                            (click)="logCloseModal()">
-                            Cerrar
-                        </button>
-                    </div>
-                </div>
+        <!-- Botones -->
+        <div class="center-btn">
+          <!-- Form -->
+          <div *ngIf="btn === 'form'" class="resume">
+            <div class="form-cage">
+              <ul>
+                <li for="" *ngFor="let user of users"> {{user}} </li>
+              </ul>
+              <label for="name" class="message">Ingrese el nombre:</label>
+              <input type="text" id="name" class="input" placeholder="Ingrese el nombre de su hijo" #newItem />
             </div>
+            <div class="btns-form">
+              <button type="button" class="btn" (click)="addNewItem(newItem.value); newItem.value=''; logUser()">Añadir</button>
+              <button
+                type="button"
+                class="btn"
+                style="background-color: rgb(229, 0, 0)"
+                (click)="close()"
+                (click)="logCloseModal()"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+
+          <!-- Btn success -->
+          <div *ngIf="btn === 'success'" class="resume">
+            <button type="button" class="btn" style="background-color: rgb(6, 229, 229)" (click)="close()" (click)="logCloseModal()">
+              Aceptar
+            </button>
+          </div>
+
+          <!-- Btn error -->
+          <div *ngIf="btn === 'error'" class="resume">
+            <button type="button" class="btn" style="background-color: red" (click)="close()" (click)="logCloseModal()">
+              Cerrar
+            </button>
+          </div>
+
+          <!-- Btn warning -->
+          <div *ngIf="btn === 'warning'" class="resume">
+            <button
+              type="button"
+              class="btn"
+              style="background-color: rgb(255, 128, 0)"
+              (click)="close()"
+              (click)="logCloseModal()"
+            >
+              Cerrar
+            </button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

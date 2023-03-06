@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-alert',
@@ -13,6 +13,19 @@ export class AlertComponent {
   @Input() message = "";
   @Input() btn = "";
 
+  // Output()
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  // Usuarios agregados
+  users: string[] = [];
+  // Metodo para agregar usuarios
+  addNewItem(value: string) {
+    // Los emitimos al padre
+    this.newItemEvent.emit(value);
+    // Los mandamos al arreglo del hijo
+    this.users.push(value);
+  }
+
   // Exportamos el modal
   @ViewChild('myModal', { static: false }) modal: ElementRef;
 
@@ -26,14 +39,14 @@ export class AlertComponent {
     this.modal.nativeElement.style.display = 'none';
   }
 
-  // Logueamos cuando se oprima el botón 1
-  logBtn01() {
-    console.log("Se ha presionado el botón 01");
+  // Logueamos cuando se ingrese un usuario
+  logUser() {
+    console.log("Se ha añadido un usuario");
   }
 
   // Logueamos cuando se finalice el Modal
   logCloseModal() {
-    console.log("Se presionó el botón 2");
+    console.log("Se presionó el botón de cerrar");
     console.log("Finalizando Modal");
   }
 }
