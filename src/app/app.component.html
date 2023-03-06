@@ -25,7 +25,7 @@
 
     <!-- Modal Form -->
     <h1 style="color: silver; font-family: system-ui;">Form</h1>
-    <app-alert #modalF (newItemEvent)="addItem($event)" [ico]="form.ico" [title]="form.title" [msgError]="form.msgError" [message]="form.message" [btn]="form.btn" />
+    <app-alert #modalF (newItemEvent)="addItem($event)" [ico]="form.ico" [title]="form.title" [msgError]="form.msgError" [message]="form.message" [btn]="form.btn" [array]="usersFather" />
     <button (click)="openModal(modalF)" (click)="logOpenModal()">Open Modal</button>
 
     <ul>

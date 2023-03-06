@@ -27,7 +27,7 @@
           <div *ngIf="btn === 'form'" class="resume">
             <div class="form-cage">
               <ul>
-                <li for="" *ngFor="let user of users">{{ user }}</li>
+                <li *ngFor="let user of array; let i = index">{{ user }} <i class="icon" (click)="removeUser(i)">x</i></li>
               </ul>
               <!-- Mensaje de error en caso de que no coloque algún usuario -->
               <p class="error" #alertaError> {{ msgError }} </p>

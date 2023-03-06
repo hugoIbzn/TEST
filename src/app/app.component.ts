@@ -7,7 +7,8 @@ interface IModal {
   title: string,
   msgError?: any,
   message: string,
-  btn: string
+  btn: string,
+  array?: string[]
 }
 
 @Component({
@@ -57,7 +58,8 @@ export class AppComponent {
     title: "Este titulo es de form",
     msgError: "Debe de agregar un usuario valido",
     message: "Mensaje de form",
-    btn: "form"
+    btn: "form",
+    array: this.usersFather
   }
 
   // Logueamos cuando se ejecute el Modal

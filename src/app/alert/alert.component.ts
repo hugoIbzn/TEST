@@ -13,12 +13,11 @@ export class AlertComponent {
   @Input() msgError = "";
   @Input() message = "";
   @Input() btn = "";
+  @Input() array = [''];
 
   // Output()
   @Output() newItemEvent = new EventEmitter<string>();
 
-  // Usuarios agregados
-  users: string[] = [];
   // Metodo para agregar usuarios
   addNewItem(value: string) {
     if (value === '' || value == ' ' || value.length <= 2) {
@@ -27,13 +26,15 @@ export class AlertComponent {
     } else {
       // Los emitimos al padre
       this.newItemEvent.emit(value);
-      // Los mandamos al arreglo del hijo
-      this.users.push(value);
       // Logueamos cuando se agrega un usuario
       this.logUser();
       // Desactivamos las letras rojas en caso de que cometa un error
       this.alertaError.nativeElement.style.display = 'none';
     }
+  }
+
+  removeUser(i: number): void {
+    this.array.splice(i, 1);
   }
 
   // Exportamos el modal
