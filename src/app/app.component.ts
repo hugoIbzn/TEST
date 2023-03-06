@@ -5,6 +5,7 @@ import { AlertComponent } from './alert/alert.component';
 interface IModal {
   ico: string,
   title: string,
+  msgError?: any,
   message: string,
   btn: string
 }
@@ -54,6 +55,7 @@ export class AppComponent {
   form: IModal = {
     ico: "users",
     title: "Este titulo es de form",
+    msgError: "Debe de agregar un usuario valido",
     message: "Mensaje de form",
     btn: "form"
   }

@@ -27,13 +27,21 @@
           <div *ngIf="btn === 'form'" class="resume">
             <div class="form-cage">
               <ul>
-                <li for="" *ngFor="let user of users"> {{user}} </li>
+                <li for="" *ngFor="let user of users">{{ user }}</li>
               </ul>
+              <!-- Mensaje de error en caso de que no coloque algún usuario -->
+              <p class="error" #alertaError> {{ msgError }} </p>
               <label for="name" class="message">Ingrese el nombre:</label>
               <input type="text" id="name" class="input" placeholder="Ingrese el nombre de su hijo" #newItem />
             </div>
             <div class="btns-form">
-              <button type="button" class="btn" (click)="addNewItem(newItem.value); newItem.value=''; logUser()">Añadir</button>
+              <button
+                type="button"
+                class="btn"
+                (click)="addNewItem(newItem.value); newItem.value = ''; logUser()"
+              >
+                Añadir
+              </button>
               <button
                 type="button"
                 class="btn"
@@ -48,7 +56,13 @@
 
           <!-- Btn success -->
           <div *ngIf="btn === 'success'" class="resume">
-            <button type="button" class="btn" style="background-color: rgb(6, 229, 229)" (click)="close()" (click)="logCloseModal()">
+            <button
+              type="button"
+              class="btn"
+              style="background-color: rgb(6, 229, 229)"
+              (click)="close()"
+              (click)="logCloseModal()"
+            >
               Aceptar
             </button>
           </div>

@@ -10,6 +10,7 @@ export class AlertComponent {
   // Creación de @Input()
   @Input() ico = "";
   @Input() title = "";
+  @Input() msgError = "";
   @Input() message = "";
   @Input() btn = "";
 
@@ -20,14 +21,31 @@ export class AlertComponent {
   users: string[] = [];
   // Metodo para agregar usuarios
   addNewItem(value: string) {
-    // Los emitimos al padre
-    this.newItemEvent.emit(value);
-    // Los mandamos al arreglo del hijo
-    this.users.push(value);
+    if (value === '' || value == ' ' || value.length <= 2) {
+      // Activamos unas letras rojas en caso de un aviso
+      this.alertaError.nativeElement.style.display = 'block';
+    } else {
+      // Los emitimos al padre
+      this.newItemEvent.emit(value);
+      // Los mandamos al arreglo del hijo
+      this.users.push(value);
+      // Logueamos cuando se agrega un usuario
+      this.logUser();
+      // Desactivamos las letras rojas en caso de que cometa un error
+      this.alertaError.nativeElement.style.display = 'none';
+    }
+  }
+
+  // Deshabilitamos el botón
+  btnDisable: boolean = true;
+
+  isEmpty() {
+    this.btnDisable = true;
   }
 
   // Exportamos el modal
   @ViewChild('myModal', { static: false }) modal: ElementRef;
+  @ViewChild('alertaError', { static: false }) alertaError: ElementRef;
 
   // Creamos la función para que inicie el modal
   open() {

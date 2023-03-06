@@ -82,6 +82,13 @@
   margin-top: 10px;
 }
 
+.error {
+  display: none;
+  color: red;
+  font-weight: 600;
+  text-align: center;
+}
+
 .resume {
   padding-bottom: 20px;
 }
