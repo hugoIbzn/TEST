@@ -28,7 +28,6 @@
     <app-alert #modalF (newItemEvent)="addItem($event)" [ico]="form.ico" [title]="form.title" [msgError]="form.msgError" [message]="form.message" [btn]="form.btn" />
     <button (click)="openModal(modalF)" (click)="logOpenModal()">Open Modal</button>
 
-    <!-- <app-pruebas (newItemEvent)="addItem($event)" /> -->
     <ul>
         <li *ngFor="let user of usersFather"> {{user}} </li>
     </ul>

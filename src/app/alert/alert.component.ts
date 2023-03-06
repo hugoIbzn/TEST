@@ -36,13 +36,6 @@ export class AlertComponent {
     }
   }
 
-  // Deshabilitamos el botón
-  btnDisable: boolean = true;
-
-  isEmpty() {
-    this.btnDisable = true;
-  }
-
   // Exportamos el modal
   @ViewChild('myModal', { static: false }) modal: ElementRef;
   @ViewChild('alertaError', { static: false }) alertaError: ElementRef;
