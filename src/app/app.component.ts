@@ -19,10 +19,10 @@ export class AppComponent {
   title = 'TEST';
 
   // Array de usuarios
-  items: string[] = [];
+  usersFather: string[] = [];
 
   addItem(newItem: string) {
-    this.items.push(newItem);
+    this.usersFather.push(newItem);
   }
 
   // Creando los casos que pueden suceder con al interfaz
